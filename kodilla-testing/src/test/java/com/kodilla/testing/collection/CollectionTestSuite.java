@@ -44,14 +44,15 @@ public class CollectionTestSuite {
         //When
         ArrayList<Integer> newList = new ArrayList<>();
         Random generator = new Random();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 50; i++) {
             newList.add(generator.nextInt(50));
         }
         ArrayList<Integer> result = oddNumbersExterminator.exterminate(newList);
-        oddNumbersExterminator.exterminate(newList);
         System.out.println("Size of list: " + result.size());
 
         //Then
+        Assertions.assertNotEquals(newList, result);
+        System.out.println("Only even numbers in list\n");
         for (Integer newNumber: result){
             if (newNumber % 2 == 0){
                 System.out.println("Even number " + newNumber);
