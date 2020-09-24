@@ -10,7 +10,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("Forum Test Suite")
-public class ForumTestSuite {
+public class ForumTestSuiteSimpleUser {
 
     @BeforeEach
     public void before(){
