@@ -1,9 +1,6 @@
 package com.kodilla.testing.library;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -19,6 +16,7 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 public class BookDirectoryTestSuite {
 
+    private static int testCounter = 0;
     private List<Book> generateListOfNBooks(int booksQuantity) {
         List<Book> resultList = new ArrayList<>();
         for (int n = 1; n <= booksQuantity; n++){
@@ -30,6 +28,12 @@ public class BookDirectoryTestSuite {
 
     @Mock
     private LibraryDatabase libraryDatabaseMock;
+
+    @BeforeEach
+    public void beforeEveryTest(){
+        testCounter++;
+        System.out.println("Execute test #" + testCounter);
+    }
 
     @Nested
     @DisplayName("Test listBookWithConditions")
