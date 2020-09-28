@@ -17,8 +17,8 @@ public class BookLibrary {
         if (resultList.size() > 20) return bookList;
         bookList = resultList;
         return bookList;
-    }
+    }/*
     public List<Book>listBooksInHandsOf(LibraryUser libraryUser){
         return null;
-    }
+    }*/
 }

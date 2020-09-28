@@ -101,24 +101,52 @@ public class BookDirectoryTestSuite {
             verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
         }
     }
-
+/*
     @Nested
     @DisplayName("Test listBooksInHandsOf")
     class TestListBooksInHandsOf{
 
         @Test
         void testListBooksInHandsOfWhenNoBooks(){
+            //given
+            BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+            List<Book> resultListOf0Books = new ArrayList<Book>();
+            when(libraryDatabaseMock.listBooksInHandsOf(libraryUser).thenReturn(resultListOf0Books);
 
+            //when
+            List<Book> theListOfBooks0 = bookLibrary.listBooksInHandsOf(libraryUser);
+
+            //then
+            assertEquals(0, theListOfBooks0.size());
         }
 
         @Test
         void testListBooksInHandsOfWhen1Book(){
+            //given
+            BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+            List<Book> resultListOf1Books = generateListOfNBooks(1);
+            when(libraryDatabaseMock.listBooksInHandsOf(libraryUser).thenReturn(resultListOf1Books);
+
+            //when
+            List<Book> theListOfBooks1 = bookLibrary.listBooksInHandsOf(libraryUser);
+
+            //then
+            assertEquals(1, theListOfBooks1.size());
 
         }
 
         @Test
         void testListBooksInHandsOfWhen5Books(){
-            
+            //given
+            BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+            List<Book> resultListOf5Books = generateListOfNBooks(1);
+            when(libraryDatabaseMock.listBooksInHandsOf(libraryUser).thenReturn(resultListOf5Books);
+
+            //when
+            List<Book> theListOfBooks5 = bookLibrary.listBooksInHandsOf(libraryUser);
+
+            //then
+            assertEquals(5, theListOfBooks5.size());
         }
-    }
+    }*/
 }
