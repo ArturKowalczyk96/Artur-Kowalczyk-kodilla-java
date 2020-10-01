@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
-/*
+
 @ExtendWith(MockitoExtension.class)
 public class ForumStatisticsTestSuite {
 
@@ -55,13 +55,26 @@ public class ForumStatisticsTestSuite {
             List<String> resultListOfUsers = generateListOfUsers(100);
             int resultPostCount = 0;
             int resultCommentsCount = 100;
-            when(statisticsMock.calculateAdvStatistics()).thenReturn(resultListOfUsers, resultPostCount, resultCommentsCount);
+            when(statisticsMock.usersNames()).thenReturn(resultListOfUsers);
+            when(statisticsMock.postsCount()).thenReturn(resultPostCount);
+            when(statisticsMock.commentsCount()).thenReturn(resultCommentsCount);
 
             //when
-            List<Book> theListOfBooks = bookLibrary.listBooksWithCondition("Secret");
+            var map = calculateStatistics.calculateAdvStatistics(statisticsMock);
+            double result = map.get("Nufd");
+            System.out.println(calculateStatistics);
 
             //then
-            assertEquals(4, theListOfBooks.size());
+            assertEquals(0.0, result);
+            System.out.println(result);
+        }
+        @Test
+        void testCalculateAdvStatisticsFor(){
+            Map<String, Boolean> hashMap = new HashMap<>();
+            hashMap.put("aa", false);
+            boolean  result = hashMap.get("aa");
+            System.out.println(result);
+
         }
     }
-}*/
+}

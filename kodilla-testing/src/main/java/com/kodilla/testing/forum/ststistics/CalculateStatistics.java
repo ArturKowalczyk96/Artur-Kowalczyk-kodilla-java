@@ -7,10 +7,11 @@ import java.util.Map;
 public class CalculateStatistics {
     private final Statistics statistics;
 
-    public CalculateStatistics(Statistics statistics){
+    public CalculateStatistics(Statistics statistics) {
         this.statistics = statistics;
     }
-    public Map<String, Double> calculateAdvStatistics(Statistics statistics){
+
+    public Map<String, Double> calculateAdvStatistics(Statistics statistics) {
         //New map of statistics
         Map<String, Double> statisticsMap = new HashMap<>();
 
@@ -32,8 +33,8 @@ public class CalculateStatistics {
 
         //Average of posts per user
         final String stringAveragePostsPerUser = "Average number of posts per user: ";
-        if (numberOfUsers == 0){
-            statisticsMap.put(stringAveragePostsPerUser + "Number of users: 0", numberOfUsers);
+        if (numberOfUsers == 0) {
+            statisticsMap.put(stringAveragePostsPerUser + "Number of users: ", numberOfUsers);
         } else {
             double averagePostsPerUser = numberOfPosts / numberOfUsers;
             statisticsMap.put(stringAveragePostsPerUser, averagePostsPerUser);
@@ -41,23 +42,28 @@ public class CalculateStatistics {
 
         //Average of comments per user
         final String stringAverageCommentsPerUser = "Average number of comments per user: ";
-        if (numberOfUsers == 0){
-            statisticsMap.put(stringAveragePostsPerUser + "Number of users: 0", numberOfUsers);
+        if (numberOfUsers == 0) {
+            statisticsMap.put(stringAveragePostsPerUser + "Number of users: ", numberOfUsers);
         } else {
             double averageCommentsPerUser = numberOfComments / numberOfUsers;
             statisticsMap.put(stringAverageCommentsPerUser, averageCommentsPerUser);
         }
         //Average of comments per post
         final String stringAverageCommentsPerPost = "Average number of comments per post: ";
-        if (numberOfPosts == 0){
-            statisticsMap.put(stringAveragePostsPerUser + "Number of users: 0", numberOfPosts);
+        if (numberOfPosts == 0) {
+            statisticsMap.put(stringAveragePostsPerUser + "Number of users: ", numberOfPosts);
         } else {
             double averageCommentsPerPost = numberOfComments / numberOfPosts;
             statisticsMap.put(stringAverageCommentsPerPost, averageCommentsPerPost);
         }
+        String print = statisticsMap.toString();
+        System.out.println(print);
+        String print1 = statisticsMap.keySet().toString();
+        System.out.println(print1);
         return statisticsMap;
     }
-    public String showStatistics(){
-        return "statistics";
+
+    public void showStatistics() {
+
     }
 }
