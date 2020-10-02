@@ -34,7 +34,7 @@ public class CalculateStatistics {
         //Average of posts per user
         final String stringAveragePostsPerUser = "Average number of posts per user: ";
         if (numberOfUsers == 0) {
-            statisticsMap.put(stringAveragePostsPerUser + "Number of users: ", numberOfUsers);
+            statisticsMap.put("Number of users: ", numberOfUsers);
         } else {
             double averagePostsPerUser = numberOfPosts / numberOfUsers;
             statisticsMap.put(stringAveragePostsPerUser, averagePostsPerUser);
@@ -43,7 +43,7 @@ public class CalculateStatistics {
         //Average of comments per user
         final String stringAverageCommentsPerUser = "Average number of comments per user: ";
         if (numberOfUsers == 0) {
-            statisticsMap.put(stringAveragePostsPerUser + "Number of users: ", numberOfUsers);
+            statisticsMap.put("Number of users: ", numberOfUsers);
         } else {
             double averageCommentsPerUser = numberOfComments / numberOfUsers;
             statisticsMap.put(stringAverageCommentsPerUser, averageCommentsPerUser);
@@ -51,19 +51,20 @@ public class CalculateStatistics {
         //Average of comments per post
         final String stringAverageCommentsPerPost = "Average number of comments per post: ";
         if (numberOfPosts == 0) {
-            statisticsMap.put(stringAveragePostsPerUser + "Number of users: ", numberOfPosts);
+            statisticsMap.put("Number of posts: ", numberOfPosts);
         } else {
             double averageCommentsPerPost = numberOfComments / numberOfPosts;
             statisticsMap.put(stringAverageCommentsPerPost, averageCommentsPerPost);
         }
-        String print = statisticsMap.toString();
+        /*String print = statisticsMap.toString();
         System.out.println(print);
         String print1 = statisticsMap.keySet().toString();
-        System.out.println(print1);
+        System.out.println(print1);*/
         return statisticsMap;
     }
 
-    public void showStatistics() {
-
+    public String showStatistics() {
+        String mapPrint = calculateAdvStatistics(statistics).toString();
+        return mapPrint;
     }
 }

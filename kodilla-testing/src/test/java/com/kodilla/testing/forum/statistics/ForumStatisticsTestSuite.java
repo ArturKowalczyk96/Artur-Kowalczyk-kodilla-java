@@ -54,6 +54,117 @@ public class ForumStatisticsTestSuite {
             CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
             List<String> resultListOfUsers = generateListOfUsers(100);
             int resultPostCount = 0;
+            int resultCommentsCount = 0;
+            when(statisticsMock.usersNames()).thenReturn(resultListOfUsers);
+            when(statisticsMock.postsCount()).thenReturn(resultPostCount);
+            when(statisticsMock.commentsCount()).thenReturn(resultCommentsCount);
+
+            //when
+            var map = calculateStatistics.calculateAdvStatistics(statisticsMock);
+            double result1 = map.get("Number of users: ");
+            double result2 = map.get("Number of posts: ");
+            double result3 = map.get("Number of comments: ");
+            double result4 = map.get("Average number of posts per user: ");
+            double result5 = map.get("Average number of comments per user: ");
+            double result6 = map.get("Number of posts: ");
+            String showMap = calculateStatistics.showStatistics();
+
+            //then
+            assertEquals(100.0, result1);
+            assertEquals(0.0, result2);
+            assertEquals(0.0, result3);
+            assertEquals(0.0, result4);
+            assertEquals(0.0, result5);
+            assertEquals(0.0, result6);
+            System.out.println("Expected: 100.0; Result: " + result1);
+            System.out.println("Expected: 0.0; Result: " + result2);
+            System.out.println("Expected: 0.0; Result: " + result3);
+            System.out.println("Expected: 0.0; Result: " + result4);
+            System.out.println("Expected: 0.0; Result: " + result5);
+            System.out.println("Expected: 0.0; Result: " + result6);
+            System.out.println(showMap);
+        }
+
+        @Test
+        void testCalculateAdvStatisticsFor1000Posts() {
+            //given
+            CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
+            List<String> resultListOfUsers = generateListOfUsers(100);
+            int resultPostCount = 1000;
+            int resultCommentsCount = 0;
+            when(statisticsMock.usersNames()).thenReturn(resultListOfUsers);
+            when(statisticsMock.postsCount()).thenReturn(resultPostCount);
+            when(statisticsMock.commentsCount()).thenReturn(resultCommentsCount);
+
+            //when
+            var map = calculateStatistics.calculateAdvStatistics(statisticsMock);
+            double result1 = map.get("Number of users: ");
+            double result2 = map.get("Number of posts: ");
+            double result3 = map.get("Number of comments: ");
+            double result4 = map.get("Average number of posts per user: ");
+            double result5 = map.get("Average number of comments per user: ");
+            double result6 = map.get("Average number of comments per post: ");
+            String showMap = calculateStatistics.showStatistics();
+
+            //then
+            assertEquals(100.0, result1);
+            assertEquals(1000.0, result2);
+            assertEquals(0.0, result3);
+            assertEquals(10.0, result4);
+            assertEquals(0.0, result5);
+            assertEquals(0.0, result6);
+            System.out.println("Expected: 100.0; Result: " + result1);
+            System.out.println("Expected: 1000.0; Result: " + result2);
+            System.out.println("Expected: 0.0; Result: " + result3);
+            System.out.println("Expected: 10.0; Result: " + result4);
+            System.out.println("Expected: 0.0; Result: " + result5);
+            System.out.println("Expected: 0.0; Result: " + result6);
+            System.out.println(showMap);
+        }
+
+        @Test
+        void testCalculateAdvStatisticsFor0Comments() {
+            //given
+            CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
+            List<String> resultListOfUsers = generateListOfUsers(100);
+            int resultPostCount = 1000;
+            int resultCommentsCount = 0;
+            when(statisticsMock.usersNames()).thenReturn(resultListOfUsers);
+            when(statisticsMock.postsCount()).thenReturn(resultPostCount);
+            when(statisticsMock.commentsCount()).thenReturn(resultCommentsCount);
+
+            //when
+            var map = calculateStatistics.calculateAdvStatistics(statisticsMock);
+            double result1 = map.get("Number of users: ");
+            double result2 = map.get("Number of posts: ");
+            double result3 = map.get("Number of comments: ");
+            double result4 = map.get("Average number of posts per user: ");
+            double result5 = map.get("Average number of comments per user: ");
+            double result6 = map.get("Average number of comments per post: ");
+            String showMap = calculateStatistics.showStatistics();
+
+            //then
+            assertEquals(100.0, result1);
+            assertEquals(1000.0, result2);
+            assertEquals(0.0, result3);
+            assertEquals(10.0, result4);
+            assertEquals(0.0, result5);
+            assertEquals(0.0, result6);
+            System.out.println("Expected: 100.0; Result: " + result1);
+            System.out.println("Expected: 1000.0; Result: " + result2);
+            System.out.println("Expected: 0.0; Result: " + result3);
+            System.out.println("Expected: 10.0; Result: " + result4);
+            System.out.println("Expected: 0.0; Result: " + result5);
+            System.out.println("Expected: 0.0; Result: " + result6);
+            System.out.println(showMap);
+        }
+
+        @Test
+        void testCalculateAdvStatisticsForLessCommentsThanPosts() {
+            //given
+            CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
+            List<String> resultListOfUsers = generateListOfUsers(100);
+            int resultPostCount = 1000;
             int resultCommentsCount = 100;
             when(statisticsMock.usersNames()).thenReturn(resultListOfUsers);
             when(statisticsMock.postsCount()).thenReturn(resultPostCount);
@@ -61,20 +172,140 @@ public class ForumStatisticsTestSuite {
 
             //when
             var map = calculateStatistics.calculateAdvStatistics(statisticsMock);
-            double result = map.get("Nufd");
-            System.out.println(calculateStatistics);
+            double result1 = map.get("Number of users: ");
+            double result2 = map.get("Number of posts: ");
+            double result3 = map.get("Number of comments: ");
+            double result4 = map.get("Average number of posts per user: ");
+            double result5 = map.get("Average number of comments per user: ");
+            double result6 = map.get("Average number of comments per post: ");
+            String showMap = calculateStatistics.showStatistics();
 
             //then
-            assertEquals(0.0, result);
-            System.out.println(result);
+            assertEquals(100.0, result1);
+            assertEquals(1000.0, result2);
+            assertEquals(100.0, result3);
+            assertEquals(10.0, result4);
+            assertEquals(1.0, result5);
+            assertEquals(0.1, result6);
+            System.out.println("Expected: 100.0; Result: " + result1);
+            System.out.println("Expected: 1000.0; Result: " + result2);
+            System.out.println("Expected: 100.0; Result: " + result3);
+            System.out.println("Expected: 10.0; Result: " + result4);
+            System.out.println("Expected: 1.0; Result: " + result5);
+            System.out.println("Expected: 0.1; Result: " + result6);
+            System.out.println(showMap);
         }
-        @Test
-        void testCalculateAdvStatisticsFor(){
-            Map<String, Boolean> hashMap = new HashMap<>();
-            hashMap.put("aa", false);
-            boolean  result = hashMap.get("aa");
-            System.out.println(result);
 
+        @Test
+        void testCalculateAdvStatisticsForMoreCommentsThanPosts() {
+            //given
+            CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
+            List<String> resultListOfUsers = generateListOfUsers(100);
+            int resultPostCount = 100;
+            int resultCommentsCount = 1000;
+            when(statisticsMock.usersNames()).thenReturn(resultListOfUsers);
+            when(statisticsMock.postsCount()).thenReturn(resultPostCount);
+            when(statisticsMock.commentsCount()).thenReturn(resultCommentsCount);
+
+            //when
+            var map = calculateStatistics.calculateAdvStatistics(statisticsMock);
+            double result1 = map.get("Number of users: ");
+            double result2 = map.get("Number of posts: ");
+            double result3 = map.get("Number of comments: ");
+            double result4 = map.get("Average number of posts per user: ");
+            double result5 = map.get("Average number of comments per user: ");
+            double result6 = map.get("Average number of comments per post: ");
+            String showMap = calculateStatistics.showStatistics();
+
+            //then
+            assertEquals(100.0, result1);
+            assertEquals(100.0, result2);
+            assertEquals(1000.0, result3);
+            assertEquals(1.0, result4);
+            assertEquals(10.0, result5);
+            assertEquals(10.0, result6);
+            System.out.println("Expected: 100.0; Result: " + result1);
+            System.out.println("Expected: 100.0; Result: " + result2);
+            System.out.println("Expected: 1000.0; Result: " + result3);
+            System.out.println("Expected: 1.0; Result: " + result4);
+            System.out.println("Expected: 10.0; Result: " + result5);
+            System.out.println("Expected: 10.0; Result: " + result6);
+            System.out.println(showMap);
+        }
+
+        @Test
+        void testCalculateAdvStatisticsFor0Users() {
+            //given
+            CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
+            List<String> resultListOfUsers = new ArrayList<>();
+            int resultPostCount = 0;
+            int resultCommentsCount = 0;
+            when(statisticsMock.usersNames()).thenReturn(resultListOfUsers);
+            when(statisticsMock.postsCount()).thenReturn(resultPostCount);
+            when(statisticsMock.commentsCount()).thenReturn(resultCommentsCount);
+
+            //when
+            var map = calculateStatistics.calculateAdvStatistics(statisticsMock);
+            double result1 = map.get("Number of users: ");
+            double result2 = map.get("Number of posts: ");
+            double result3 = map.get("Number of comments: ");
+            double result4 = map.get("Number of users: ");
+            double result5 = map.get("Number of users: ");
+            double result6 = map.get("Number of posts: ");
+            String showMap = calculateStatistics.showStatistics();
+
+            //then
+            assertEquals(0.0, result1);
+            assertEquals(0.0, result2);
+            assertEquals(0.0, result3);
+            assertEquals(0.0, result4);
+            assertEquals(0.0, result5);
+            assertEquals(0.0, result6);
+            System.out.println("Expected: 0.0; Result: " + result1);
+            System.out.println("Expected: 0.0; Result: " + result2);
+            System.out.println("Expected: 0.0; Result: " + result3);
+            System.out.println("Expected: 0.0; Result: " + result4);
+            System.out.println("Expected: 0.0; Result: " + result5);
+            System.out.println("Expected: 0.0; Result: " + result6);
+            System.out.println(showMap);
+        }
+
+        @Test
+        void testCalculateAdvStatisticsFor10Users() {
+            //given
+            CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
+            List<String> resultListOfUsers = generateListOfUsers(100);
+            int resultPostCount = 100;
+            int resultCommentsCount = 1000;
+            when(statisticsMock.usersNames()).thenReturn(resultListOfUsers);
+            when(statisticsMock.postsCount()).thenReturn(resultPostCount);
+            when(statisticsMock.commentsCount()).thenReturn(resultCommentsCount);
+
+
+            //when
+            var map = calculateStatistics.calculateAdvStatistics(statisticsMock);
+            double result1 = map.get("Number of users: ");
+            double result2 = map.get("Number of posts: ");
+            double result3 = map.get("Number of comments: ");
+            double result4 = map.get("Average number of posts per user: ");
+            double result5 = map.get("Average number of comments per user: ");
+            double result6 = map.get("Average number of comments per post: ");
+            String showMap = calculateStatistics.showStatistics();
+
+            //then
+            assertEquals(100.0, result1);
+            assertEquals(100.0, result2);
+            assertEquals(1000.0, result3);
+            assertEquals(1.0, result4);
+            assertEquals(10.0, result5);
+            assertEquals(10.0, result6);
+            System.out.println("Expected: 100.0; Result: " + result1);
+            System.out.println("Expected: 100.0; Result: " + result2);
+            System.out.println("Expected: 1000.0; Result: " + result3);
+            System.out.println("Expected: 1.0; Result: " + result4);
+            System.out.println("Expected: 10.0; Result: " + result5);
+            System.out.println("Expected: 10.0; Result: " + result6);
+            System.out.println(showMap);
         }
     }
 }
