@@ -1,10 +1,10 @@
 package com.kodilla.stream;
 
 import com.kodilla.stream.baeutifier.PoemBeautifier;
+import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
-import java.lang.StringBuilder;
 
 public class StreamMain {
     public static void main(String[] args){
@@ -27,17 +27,18 @@ public class StreamMain {
         //3.0
         ExpressionExecutor expressionExecutor = new ExpressionExecutor();
         //3.1
-        System.out.println("Calculating expressions with lambdas");
+        System.out.println("\nCalculating expressions with lambdas");
         expressionExecutor.executeExpression(10, 5, (a, b) -> a + b);
         expressionExecutor.executeExpression(10, 5, (a, b) -> a - b);
         expressionExecutor.executeExpression(10, 5, (a, b) -> a * b);
         expressionExecutor.executeExpression(10, 5, (a, b) -> a / b);
         //3.2
-        System.out.println("Calculating expressions with method references");
+        System.out.println("\nCalculating expressions with method references");
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::multiplyAByB);
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::addAToB);
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::subBFromA);
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::divideAByB);
+        System.out.println();
 
         //4
         PoemBeautifier poemBeautifier = new PoemBeautifier();
@@ -47,5 +48,9 @@ public class StreamMain {
         poemBeautifier.beautify(strToBeaut, (toDecorate -> toDecorate.concat(" ABC")));
         poemBeautifier.beautify(strToBeaut, (toDecorate -> toDecorate.toLowerCase()));
         poemBeautifier.beautify(strToBeaut, (toDecorate -> "ABC" + toDecorate + "ABC"));
+
+        //5
+        System.out.println("\nUsing Stream to generate even numbers from 1 to 20");
+        NumbersGenerator.generateEven(20);
     }
 }
