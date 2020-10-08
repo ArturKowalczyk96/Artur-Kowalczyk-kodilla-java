@@ -11,14 +11,19 @@ public final class World {
         this.listOfContinents = listOfCountries;
     }
 
+    public void addContinent(Continent continent){
+        listOfContinents.add(continent);
+    }
+
     public List<Continent> getListOfContinents(){
-        return new ArrayList<>(listOfContinents);
+        return new  ArrayList<>(listOfContinents);
     }
 
     public BigDecimal getPeopleQuantity(){
         return listOfContinents.stream()
                 .flatMap(continent -> continent.getListOfCountries().stream())
-                .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current.getPeopleQuantity()));
+                .map(Country::getPeopleQuantity)
+                .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
     }
 }
 

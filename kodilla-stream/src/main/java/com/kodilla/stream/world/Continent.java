@@ -10,6 +10,9 @@ public final class Continent {
         this.continentName = continentName;
         this.listOfCountries = listOfCountries;
     }
+    public void addCountry(Country country){
+        listOfCountries.add(country);
+    }
 
     public List<Country> getListOfCountries(){
         return new ArrayList<>(listOfCountries);
