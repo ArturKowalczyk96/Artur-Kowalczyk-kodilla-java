@@ -1,5 +1,7 @@
 package com.kodilla.stream.array;
 
+import com.kodilla.stream.portfolio.Task;
+
 import java.util.OptionalDouble;
 import java.util.stream.IntStream;
 
