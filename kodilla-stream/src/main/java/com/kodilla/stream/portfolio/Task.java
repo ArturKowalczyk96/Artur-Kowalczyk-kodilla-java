@@ -58,8 +58,8 @@ public final class Task {
                 '}';
     }
 
-    public long getTimeForTask(){
+    /*public long getTimeForTask(){
         long period = Duration.between(created, now()).toDays();
         return period;
-    }
+    }*/
 }

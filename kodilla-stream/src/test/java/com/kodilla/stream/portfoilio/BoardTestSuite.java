@@ -3,6 +3,7 @@ package com.kodilla.stream.portfoilio;
 import com.kodilla.stream.portfolio.*;
 import org.junit.jupiter.api.Test;
 
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.time.LocalDate;
 
@@ -152,12 +153,12 @@ public class BoardTestSuite{
         OptionalDouble averageTime = project.getTaskLists().stream()
                 .filter(averageTimeOfTasksInProgress::contains)
                 .flatMap(al -> al.getTasks().stream())
-                .mapToDouble(Task::getTimeForTask)
-                .average();
+                .map(s -> s.getCreated())
+                .map(d -> ChronoUnit.DAYS.between(d, LocalDate.now()))
+                .mapToDouble(Long::doubleValue).average();
         //OptionalDouble expected = new OptionalDouble.of(10.0);
 
         //Then
         assertEquals(10.0, averageTime.getAsDouble(), 0.1);
     }
 }
-
