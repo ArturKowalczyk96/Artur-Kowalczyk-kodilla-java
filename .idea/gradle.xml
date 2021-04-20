@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Artur-Kowalczyk-kodilla-java-master" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Artur-Kowalczyk-kodilla-java-master" />
+            <option value="$PROJECT_DIR$/Artur-Kowalczyk-kodilla-java-master/kodilla-exception" />
+            <option value="$PROJECT_DIR$/Artur-Kowalczyk-kodilla-java-master/kodilla-good-patterns" />
+            <option value="$PROJECT_DIR$/Artur-Kowalczyk-kodilla-java-master/kodilla-patterns" />
+            <option value="$PROJECT_DIR$/Artur-Kowalczyk-kodilla-java-master/kodilla-rps" />
+            <option value="$PROJECT_DIR$/Artur-Kowalczyk-kodilla-java-master/kodilla-spring" />
+            <option value="$PROJECT_DIR$/Artur-Kowalczyk-kodilla-java-master/kodilla-spring-intro" />
+            <option value="$PROJECT_DIR$/Artur-Kowalczyk-kodilla-java-master/kodilla-spring-web" />
+            <option value="$PROJECT_DIR$/Artur-Kowalczyk-kodilla-java-master/kodilla-stream" />
+            <option value="$PROJECT_DIR$/Artur-Kowalczyk-kodilla-java-master/kodilla-testing" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
