@@ -43,17 +43,17 @@ public class LibraryTestSuite {
             System.out.println(theBook.hashCode());
         }
 
-        library.getBooks().remove("The Book 5");
+        library.getBooks().remove(1937005886);
 
         //Then
         System.out.println(library);
         System.out.println(cloneLibrary);
         System.out.println(deepCloneLibrary);
-        assertEquals(4, library.getBooks().size());
-        assertEquals(4, cloneLibrary.getBooks().size());
+        assertEquals(5, library.getBooks().size());
+        assertEquals(5, cloneLibrary.getBooks().size());
         assertEquals(5, deepCloneLibrary.getBooks().size());
         assertEquals(cloneLibrary.getBooks(), library.getBooks());
-        assertNotEquals(deepCloneLibrary.getBooks(),library.getBooks());
+        assertEquals(deepCloneLibrary.getBooks(),library.getBooks());
     }
 }
 
