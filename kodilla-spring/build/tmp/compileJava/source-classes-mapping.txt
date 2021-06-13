@@ -1,0 +1,38 @@
+com/kodilla/spring/shape/ShapeFactory.java
+ com.kodilla.spring.shape.ShapeFactory
+com/kodilla/spring/reader/IfDayIsOddCondition.java
+ com.kodilla.spring.reader.IfDayIsOddCondition
+com/kodilla/spring/portfolio/TaskList.java
+ com.kodilla.spring.portfolio.TaskList
+com/kodilla/spring/reader/Reader.java
+ com.kodilla.spring.reader.Reader
+com/kodilla/spring/shape/Circle.java
+ com.kodilla.spring.shape.Circle
+com/kodilla/spring/forum/ForumUser.java
+ com.kodilla.spring.forum.ForumUser
+com/kodilla/spring/calculator/Calculator.java
+ com.kodilla.spring.calculator.Calculator
+com/kodilla/spring/calculator/Display.java
+ com.kodilla.spring.calculator.Display
+com/kodilla/spring/reader/Book.java
+ com.kodilla.spring.reader.Book
+com/kodilla/spring/reader/ReaderConfig.java
+ com.kodilla.spring.reader.ReaderConfig
+com/kodilla/KodillaSpringApplication.java
+ com.kodilla.KodillaSpringApplication
+com/kodilla/spring/library/Library.java
+ com.kodilla.spring.library.Library
+com/kodilla/spring/library/LibraryConfig.java
+ com.kodilla.spring.library.LibraryConfig
+com/kodilla/spring/shape/Shape.java
+ com.kodilla.spring.shape.Shape
+com/kodilla/spring/shape/Square.java
+ com.kodilla.spring.shape.Square
+com/kodilla/spring/shape/Triangle.java
+ com.kodilla.spring.shape.Triangle
+com/kodilla/spring/portfolio/Board.java
+ com.kodilla.spring.portfolio.Board
+com/kodilla/spring/library/LibraryDbController.java
+ com.kodilla.spring.library.LibraryDbController
+com/kodilla/spring/portfolio/BoardConfig.java
+ com.kodilla.spring.portfolio.BoardConfig

@@ -1,0 +1,12 @@
+com/kodilla/spring/forum/ForumUserTestSuite.java
+ com.kodilla.spring.forum.ForumUserTestSuite
+com/kodilla/KodillaSpringApplicationTests.java
+ com.kodilla.KodillaSpringApplicationTests
+com/kodilla/spring/portfolio/BoardTestSuite.java
+ com.kodilla.spring.portfolio.BoardTestSuite
+com/kodilla/spring/calculator/CalculatorTestSuite.java
+ com.kodilla.spring.calculator.CalculatorTestSuite
+com/kodilla/spring/library/LibraryTestSuite.java
+ com.kodilla.spring.library.LibraryTestSuite
+com/kodilla/spring/reader/ReaderTestSuite.java
+ com.kodilla.spring.reader.ReaderTestSuite
