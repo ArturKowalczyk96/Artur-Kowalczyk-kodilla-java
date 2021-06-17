@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.stream.IntStream;
 
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class LibraryTestSuite {
 
@@ -43,17 +43,18 @@ public class LibraryTestSuite {
             System.out.println(theBook.hashCode());
         }
 
-        library.getBooks().remove(1937005886);
+        boolean remove = library.getBooks().remove(new Book("The Book 3", "nn", pub));
 
         //Then
+        System.out.println(remove);
         System.out.println(library);
         System.out.println(cloneLibrary);
         System.out.println(deepCloneLibrary);
-        assertEquals(5, library.getBooks().size());
-        assertEquals(5, cloneLibrary.getBooks().size());
+        assertEquals(4, library.getBooks().size());
+        assertEquals(4, cloneLibrary.getBooks().size());
         assertEquals(5, deepCloneLibrary.getBooks().size());
         assertEquals(cloneLibrary.getBooks(), library.getBooks());
-        assertEquals(deepCloneLibrary.getBooks(),library.getBooks());
+        assertNotEquals(deepCloneLibrary.getBooks(),library.getBooks());
     }
 }
 

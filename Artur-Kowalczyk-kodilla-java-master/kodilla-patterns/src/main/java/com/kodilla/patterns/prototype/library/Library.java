@@ -3,6 +3,7 @@ package com.kodilla.patterns.prototype.library;
 import com.kodilla.patterns.prototype.Prototype;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public final class Library extends Prototype<Library> {
@@ -28,6 +29,19 @@ public final class Library extends Prototype<Library> {
 
     public Set<Book> getBooks() {
         return books;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Library library = (Library) o;
+        return Objects.equals(name, library.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 
     @Override
