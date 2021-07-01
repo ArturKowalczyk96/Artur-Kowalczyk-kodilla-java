@@ -15,7 +15,7 @@ public class DBManager {
         connectionProperties.put("user", "kodilla_user");
         connectionProperties.put("password", "kodilla_Pass123");
         connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/kodilla_course?serverTimezone=Europe/Warsaw" + "&useSSL=False",
+                "jdbc:mysql://localhost:3306/kodilla_course?serverTimezone=Europe/Warsaw" + "&useSSL=False&allowPublicKeyRetrieval=true",
                 connectionProperties);
     }
 
