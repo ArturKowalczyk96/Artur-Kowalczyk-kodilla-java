@@ -1,0 +1,2 @@
+com/kodilla/jdbc/DBMangerTestSuite.java
+ com.kodilla.jdbc.DBMangerTestSuite

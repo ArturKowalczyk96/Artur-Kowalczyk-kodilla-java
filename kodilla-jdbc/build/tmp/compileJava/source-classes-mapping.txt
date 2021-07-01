@@ -1,0 +1,4 @@
+com/kodilla/jdbc/DBManager.java
+ com.kodilla.jdbc.DBManager
+com/kodilla/jdbc/FileReader.java
+ com.kodilla.jdbc.FileReader
